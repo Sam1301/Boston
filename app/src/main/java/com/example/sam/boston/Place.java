@@ -6,26 +6,26 @@ package com.example.sam.boston;
  * {@link Place#mPhoneNumber} and hours open {@link Place#mTimeInMillis}.
  */
 public class Place {
+
+    // TODO: add functionality for storing image
     // resource id for image
-    int mImageResourceId;
+    private int mImageResourceId;
 
     // name
-    String mName;
+    private String mName;
 
     // rating
-    float mRating;
+    private float mRating;
 
     // address
-    String mAddress;
+    private String mAddress;
 
     // phone number
     // using a string data type to account for phone numbers starting with zero
-    String mPhoneNumber;
+    private String mPhoneNumber;
 
     // opens at
-    long mTimeInMillis;
-
-    // TODO: add functionality for storing image
+    private long mTimeInMillis;
 
     /**
      * Constructor to initialize name, address and phone number fields for a place
@@ -64,4 +64,62 @@ public class Place {
     public String toString() {
         return mName + "\n" + mAddress + "\n" + mPhoneNumber;
     }
+
+    /**
+     * Return name of place
+     *
+     * @return {@link Place#mName}
+     */
+    public String getName() {
+        return mName;
+    }
+
+    /**
+     * Return rating of mall or restaurant
+     *
+     * @return {@link Place#mRating}
+     */
+    public float getRating() {
+        return mRating;
+    }
+
+    /**
+     * Return image of place
+     *
+     * @return {@link Place#mImageResourceId}
+     */
+    public int getImageResourceId() {
+        return mImageResourceId;
+    }
+
+
+    /**
+     * Return time at which the place opens
+     *
+     * @return {@link Place#mTimeInMillis}
+     */
+    public long getTimeInMillis() {
+        return mTimeInMillis;
+    }
+
+
+    /**
+     * Return address of place
+     *
+     * @return {@link Place#mAddress}
+     */
+    public String getAddress() {
+        return mAddress;
+    }
+
+    /**
+     * Return phone number of place
+     *
+     * @return {@link Place#mPhoneNumber}
+     */
+    public String getPhoneNumber() {
+        return mPhoneNumber;
+    }
+
+    // TODO: Handle case for different constructor invocation (for RestaurantsActivity and MallsActivity)
 }
