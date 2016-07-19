@@ -90,8 +90,8 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
             timeTextView.setText(String.format("%02d:%02d", TimeUnit.MILLISECONDS.toHours(millis)
                     , TimeUnit.MILLISECONDS.toMinutes(millis) % TimeUnit.HOURS.toMinutes(1)));
         } else {
-            // remove rating, rating bar and time from list item layout for OfficesActivity and
-            // CollegesActivity
+            // remove rating, rating bar and time from list item layout for OfficesFragment and
+            // CollegesFragment
             ratingTextView.setVisibility(View.GONE);
             ratingBar.setVisibility(View.GONE);
             timeImageView.setVisibility(View.GONE);

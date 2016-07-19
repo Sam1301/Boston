@@ -32,7 +32,7 @@ public class Place {
 
     /**
      * Constructor to initialize image resource id, name, address and phone number fields for a place
-     * Used by {@link OfficesActivity} and {@link CollegesActivity}
+     * Used by {@link OfficesFragment} and {@link CollegesFragment}
      *
      * @param imageResourceId {@link Place#mImageResourceId}
      * @param name {@link Place#mName}
@@ -49,7 +49,7 @@ public class Place {
     /**
      * Constructor to initialize name, rating, address ,phone number and opening time fields for a
      * place.
-     * Used by {@link MallsActivity} and {@link RestaurantsActivity}
+     * Used by {@link MallsFragment} and {@link RestaurantsFragment}
      *
      * @param name {@link Place#mName}
      * @param rating {@link Place#mRating}

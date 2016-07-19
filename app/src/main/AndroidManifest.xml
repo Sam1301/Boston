@@ -17,35 +17,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".MallsActivity"
-            android:label="@string/category_malls"
-            android:parentActivityName=".MainActivity">
-
-            <!-- for android < 4.0 -->
-        </activity>
-
-        <activity android:name=".OfficesActivity"
-            android:label="@string/category_offices"
-            android:parentActivityName=".MainActivity" >
-
-            <!-- for android < 4.0 -->
-        </activity>
-
-        <activity android:name=".CollegesActivity"
-            android:label="@string/category_colleges"
-            android:parentActivityName=".MainActivity">
-
-            <!-- for android < 4.0 -->
-        </activity>
-
-        <activity android:name=".RestaurantsActivity"
-            android:label="@string/category_restaurants"
-            android:parentActivityName=".MainActivity">
-
-            <!-- for android < 4.0 -->
-        </activity>
-
     </application>
 
 </manifest>
