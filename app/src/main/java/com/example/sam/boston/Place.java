@@ -59,4 +59,9 @@ public class Place {
         mRating = rating;
         mTimeInMillis = time;
     }
+
+    @Override
+    public String toString() {
+        return mName + "\n" + mAddress + "\n" + mPhoneNumber;
+    }
 }
