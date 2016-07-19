@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.sam.boston.MainActivity">
+
+    <TextView
+        android:id="@+id/malls_text_view"
+        style="@style/CategoryStyle"
+        android:background="@color/category_malls"
+        android:text="@string/category_malls" />
+    <TextView
+        android:id="@+id/offices_text_view"
+        style="@style/CategoryStyle"
+        android:background="@color/category_offices"
+        android:text="@string/category_offices" />
+    <TextView
+        android:id="@+id/colleges_text_view"
+        style="@style/CategoryStyle"
+        android:background="@color/category_colleges"
+        android:text="@string/category_colleges" />
+    <TextView
+        android:id="@+id/restaurant_text_view"
+        style="@style/CategoryStyle"
+        android:background="@color/category_restaurants"
+        android:text="@string/category_restaurants" />
+</LinearLayout>

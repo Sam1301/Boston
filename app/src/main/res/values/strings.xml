@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Boston</string>
+    <string name="category_malls">Malls</string>
+    <string name="category_offices">Offices</string>
+    <string name="category_colleges">Colleges</string>
+    <string name="category_restaurants">Restraunts</string>
+</resources>
