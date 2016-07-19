@@ -14,8 +14,11 @@ public class Place {
     // name
     private String mName;
 
+    // sentinel value for rating
+    private final float NO_RATING_VALUE = -1.0f;
+
     // rating
-    private float mRating;
+    private float mRating = NO_RATING_VALUE;
 
     // address
     private String mAddress;
@@ -28,14 +31,16 @@ public class Place {
     private long mTimeInMillis;
 
     /**
-     * Constructor to initialize name, address and phone number fields for a place
+     * Constructor to initialize image resource id, name, address and phone number fields for a place
      * Used by {@link OfficesActivity} and {@link CollegesActivity}
      *
+     * @param imageResourceId {@link Place#mImageResourceId}
      * @param name {@link Place#mName}
      * @param address {@link Place#mAddress}
      * @param phoneNumber {@link Place#mPhoneNumber}
      */
-    public Place(String name, String address, String phoneNumber) {
+    public Place(int imageResourceId, String name, String address, String phoneNumber) {
+        mImageResourceId = imageResourceId;
         mName = name;
         mPhoneNumber = phoneNumber;
         mAddress = address;
@@ -52,17 +57,13 @@ public class Place {
      * @param phoneNumber {@link Place#mPhoneNumber}
      * @param time {@link Place#mTimeInMillis}
      */
-    public Place(String name, float rating, String address, String phoneNumber, long time) {
+    public Place(int imageResourceId, String name, float rating, String address, String phoneNumber, long time) {
+        mImageResourceId = imageResourceId;
         mName = name;
         mPhoneNumber = phoneNumber;
         mAddress = address;
         mRating = rating;
         mTimeInMillis = time;
-    }
-
-    @Override
-    public String toString() {
-        return mName + "\n" + mAddress + "\n" + mPhoneNumber;
     }
 
     /**
@@ -121,5 +122,12 @@ public class Place {
         return mPhoneNumber;
     }
 
-    // TODO: Handle case for different constructor invocation (for RestaurantsActivity and MallsActivity)
+    /**
+     * Function to return true if place object {@link Place} is storing Malls or Restaurant data
+     *
+     * @return return true when PLace {@link Place} object has value for rating and time fields
+     */
+    public boolean hasRatingAndTime() {
+        return mRating != NO_RATING_VALUE;
+    }
 }

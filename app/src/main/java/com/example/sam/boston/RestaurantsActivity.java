@@ -19,21 +19,11 @@ public class RestaurantsActivity extends AppCompatActivity {
         ArrayList<Place> places = new ArrayList<>();
 
         // initialize array list
-        places.add(new Place("Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place("Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place("Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place("Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place("Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place("Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place("Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place("Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place("Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place("Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place("Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place("Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place("Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place("Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place("Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
+        places.add(new Place(R.drawable.image, "Harvard", 4.6f, "Cambridge, MA 02138", "+1 617-495-1000", 28800000));
+        places.add(new Place(R.drawable.image, "Harvard", 4.6f, "Cambridge, MA 02138", "+1 617-495-1000", 28800000));
+        places.add(new Place(R.drawable.image, "Harvard", 4.6f, "Cambridge, MA 02138", "+1 617-495-1000", 28800000));
+        places.add(new Place(R.drawable.image, "Harvard", 4.6f, "Cambridge, MA 02138", "+1 617-495-1000", 28800000));
+        places.add(new Place(R.drawable.image, "Harvard", 4.6f, "Cambridge, MA 02138", "+1 617-495-1000", 28800000));
 
         // array adapter to aid displaying places in ListView
         PlaceAdapter adapter = new PlaceAdapter(this, places);

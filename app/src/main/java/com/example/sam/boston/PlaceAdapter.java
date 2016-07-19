@@ -10,6 +10,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Adapter {@link PlaceAdapter} for populating ListView with place {@link Place} objects.
@@ -61,21 +62,43 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
         TextView phoneTextView = (TextView) convertView.findViewById(R.id.phone);
         phoneTextView.setText(currentPlace.getPhoneNumber());
 
-        // remove rating, rating bar and time from list item layout for OfficesActivity and
-        // CollegesActivity
+        // find TextView in the list_item.xml with id place_image
+        ImageView placeImageView = (ImageView) convertView.findViewById(R.id.place_image);
+        placeImageView.setImageResource(currentPlace.getImageResourceId());
+
         // find TextView in the list_item.xml with id rating
         TextView ratingTextView = (TextView) convertView.findViewById(R.id.float_rating);
-        ratingTextView.setVisibility(View.GONE);
+
         // find RatingBar in the list_item.xml with id rating_bar
         RatingBar ratingBar = (RatingBar) convertView.findViewById(R.id.rating_bar);
-        ratingBar.setVisibility(View.GONE);
+
         // find ImageView in the list_item.xml with id icon_time
         ImageView timeImageView = (ImageView) convertView.findViewById(R.id.icon_time);
-        timeImageView.setVisibility(View.GONE);
+
         // find TextView in the list_item.xml with id time
         TextView timeTextView = (TextView) convertView.findViewById(R.id.time);
-        timeTextView.setVisibility(View.GONE);
 
+        if (currentPlace.hasRatingAndTime()) {
+            // set value for rating
+            ratingTextView.setText(currentPlace.getRating() + "");
+
+            // set value for rating bar
+            ratingBar.setRating(currentPlace.getRating());
+
+            // set value for time
+            long millis = currentPlace.getTimeInMillis();
+            timeTextView.setText(String.format("%02d:%02d", TimeUnit.MILLISECONDS.toHours(millis)
+                    , TimeUnit.MILLISECONDS.toMinutes(millis) % TimeUnit.HOURS.toMinutes(1)));
+        } else {
+            // remove rating, rating bar and time from list item layout for OfficesActivity and
+            // CollegesActivity
+            ratingTextView.setVisibility(View.GONE);
+            ratingBar.setVisibility(View.GONE);
+            timeImageView.setVisibility(View.GONE);
+            timeTextView.setVisibility(View.GONE);
+        }
+
+        // return view
         return convertView;
     }
 }
