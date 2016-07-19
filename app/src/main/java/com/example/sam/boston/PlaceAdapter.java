@@ -5,9 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Adapter {@link PlaceAdapter} for populating ListView with place {@link Place} objects.
@@ -15,14 +17,17 @@ import java.util.List;
 public class PlaceAdapter extends ArrayAdapter<Place> {
 
     /**
-     * To initialize memory for Place {@link Place} objects
+     * The context is used to inflate the layout file, and the list is the data we want
+     * to populate into the lists.
      *
-     * @param context  activity context {@link Context}
-     * @param resource layout file for list item
-     * @param objects  ArrayList of Place {@link Place} objects
+     * @param context current context used to inflate the activity
+     * @param places  ArrayList of Place {@link Place} objects
      */
-    public PlaceAdapter(Context context, int resource, List<Place> objects) {
-        super(context, resource, objects);
+    public PlaceAdapter(Context context, ArrayList<Place> places) {
+        // This initializes the ArrayAdapter's internal storage for the context and the list.
+        // The second argument is used when the ArrayAdapter is populating a single TextView.
+        // The adapter is not going to use this value so it can be anything, in this case 0.
+        super(context, 0, places);
     }
 
     /**
@@ -55,6 +60,21 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
         // find TextView in the list_item.xml with id phone
         TextView phoneTextView = (TextView) convertView.findViewById(R.id.phone);
         phoneTextView.setText(currentPlace.getPhoneNumber());
+
+        // remove rating, rating bar and time from list item layout for OfficesActivity and
+        // CollegesActivity
+        // find TextView in the list_item.xml with id rating
+        TextView ratingTextView = (TextView) convertView.findViewById(R.id.float_rating);
+        ratingTextView.setVisibility(View.GONE);
+        // find RatingBar in the list_item.xml with id rating_bar
+        RatingBar ratingBar = (RatingBar) convertView.findViewById(R.id.rating_bar);
+        ratingBar.setVisibility(View.GONE);
+        // find ImageView in the list_item.xml with id icon_time
+        ImageView timeImageView = (ImageView) convertView.findViewById(R.id.icon_time);
+        timeImageView.setVisibility(View.GONE);
+        // find TextView in the list_item.xml with id time
+        TextView timeTextView = (TextView) convertView.findViewById(R.id.time);
+        timeTextView.setVisibility(View.GONE);
 
         return convertView;
     }
