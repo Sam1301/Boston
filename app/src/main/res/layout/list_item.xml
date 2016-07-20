@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -13,8 +12,7 @@
         android:id="@+id/place_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        tools:src="@drawable/image" />
+        android:scaleType="centerCrop" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,20 +23,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/list_item_text_spacing"
-            tools:text="Harvard"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
             android:id="@+id/float_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/name"
-            tools:text="4.6" />
+            android:layout_below="@id/name" />
 
         <RatingBar
             android:id="@+id/rating_bar"
             style="?android:attr/ratingBarStyleSmall"
-            tools:rating="4.6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/list_item_text_spacing"
@@ -69,8 +64,7 @@
 
             <TextView
                 android:id="@+id/address"
-                style="@style/ListItemStyle"
-                tools:text="Cambridge, MA" />
+                style="@style/ListItemStyle" />
         </LinearLayout>
 
         <LinearLayout
@@ -87,8 +81,7 @@
 
             <TextView
                 android:id="@+id/phone"
-                style="@style/ListItemStyle"
-                tools:text="+1 617-495-1000" />
+                style="@style/ListItemStyle" />
         </LinearLayout>
 
         <LinearLayout
@@ -105,8 +98,7 @@
 
             <TextView
                 android:id="@+id/time"
-                style="@style/ListItemStyle"
-                tools:text="8: 00" />
+                style="@style/ListItemStyle" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
