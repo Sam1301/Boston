@@ -3,7 +3,7 @@ package com.example.sam.boston;
 /**
  * {@link Place} Stores the information of every place like image {@link Place#mImageResourceId},
  * address {@link Place#mAddress}, rating {@link Place#mRating}, phone number
- * {@link Place#mPhoneNumber} and hours open {@link Place#mTimeInMillis}.
+ * {@link Place#mPhoneNumber} and hours open {@link Place#mTime}.
  */
 public class Place {
 
@@ -28,11 +28,11 @@ public class Place {
     private String mPhoneNumber;
 
     // opens at
-    private long mTimeInMillis;
+    private String mTime;
 
     /**
      * Constructor to initialize image resource id, name, address and phone number fields for a place
-     * Used by {@link OfficesFragment} and {@link CollegesFragment}
+     * Used by {@link PlacesFragment} and {@link CollegesFragment}
      *
      * @param imageResourceId {@link Place#mImageResourceId}
      * @param name {@link Place#mName}
@@ -55,15 +55,15 @@ public class Place {
      * @param rating {@link Place#mRating}
      * @param address {@link Place#mAddress}
      * @param phoneNumber {@link Place#mPhoneNumber}
-     * @param time {@link Place#mTimeInMillis}
+     * @param time {@link Place#mTime}
      */
-    public Place(int imageResourceId, String name, float rating, String address, String phoneNumber, long time) {
+    public Place(int imageResourceId, String name, float rating, String address, String phoneNumber, String time) {
         mImageResourceId = imageResourceId;
         mName = name;
         mPhoneNumber = phoneNumber;
         mAddress = address;
         mRating = rating;
-        mTimeInMillis = time;
+        mTime = time;
     }
 
     /**
@@ -97,10 +97,10 @@ public class Place {
     /**
      * Return time at which the place opens
      *
-     * @return {@link Place#mTimeInMillis}
+     * @return {@link Place#mTime}
      */
-    public long getTimeInMillis() {
-        return mTimeInMillis;
+    public String getTime() {
+        return mTime;
     }
 
 

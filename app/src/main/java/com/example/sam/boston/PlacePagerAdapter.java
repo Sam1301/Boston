@@ -42,7 +42,7 @@ public class PlacePagerAdapter extends FragmentPagerAdapter {
             case 2:
                 return new CollegesFragment();
             case 3:
-                return new OfficesFragment();
+                return new PlacesFragment();
             default:
                 return null;
         }
@@ -69,7 +69,7 @@ public class PlacePagerAdapter extends FragmentPagerAdapter {
             case 2:
                 return mContext.getString(R.string.category_colleges);
             case 3:
-                return mContext.getString(R.string.category_offices);
+                return mContext.getString(R.string.category_places);
             default:
                 return null;
         }

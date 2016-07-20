@@ -38,11 +38,26 @@ public class MallsFragment extends Fragment {
         ArrayList<Place> places = new ArrayList<>();
 
         // initialize array list
-        places.add(new Place(R.drawable.image, "Harvard", 4.6f, "Cambridge, MA 02138", "+1 617-495-1000", 28800000));
-        places.add(new Place(R.drawable.image, "Harvard", 4.6f, "Cambridge, MA 02138", "+1 617-495-1000", 28800000));
-        places.add(new Place(R.drawable.image, "Harvard", 4.6f, "Cambridge, MA 02138", "+1 617-495-1000", 28800000));
-        places.add(new Place(R.drawable.image, "Harvard", 4.6f, "Cambridge, MA 02138", "+1 617-495-1000", 28800000));
-        places.add(new Place(R.drawable.image, "Harvard", 4.6f, "Cambridge, MA 02138", "+1 617-495-1000", 28800000));
+        places.add(new Place(R.drawable.mall_commonwealth_avenue,
+                getActivity().getString(R.string.mall_commonwealth_avenue_name), 4.6f,
+                getActivity().getString(R.string.mall_commonwealth_avenue_address),
+                getActivity().getString(R.string.mall_commonwealth_avenue_phone),
+                getActivity().getString(R.string.mall_commonwealth_avenue_time)));
+        places.add(new Place(R.drawable.mall_copley_place,
+                getActivity().getString(R.string.mall_copley_place_name), 4.2f,
+                getActivity().getString(R.string.mall_copley_place_address),
+                getActivity().getString(R.string.mall_copley_place_phone),
+                getActivity().getString(R.string.mall_copley_place_time)));
+        places.add(new Place(R.drawable.mall_market_place_center,
+                getActivity().getString(R.string.mall_market_place_center_name), 4.0f,
+                getActivity().getString(R.string.mall_market_place_center_address),
+                getActivity().getString(R.string.mall_market_place_center_phone),
+                getActivity().getString(R.string.mall_market_place_center_time)));
+        places.add(new Place(R.drawable.mall_the_corner,
+                getActivity().getString(R.string.mall_the_corner_name), 4.0f,
+                getActivity().getString(R.string.mall_the_corner_address),
+                getActivity().getString(R.string.mall_the_corner_phone),
+                getActivity().getString(R.string.mall_the_corner_time)));
 
         // array adapter to aid displaying places in ListView
         PlaceAdapter adapter = new PlaceAdapter(getActivity(), places);

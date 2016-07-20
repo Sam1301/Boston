@@ -10,7 +10,6 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Adapter {@link PlaceAdapter} for populating ListView with place {@link Place} objects.
@@ -80,17 +79,15 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
 
         if (currentPlace.hasRatingAndTime()) {
             // set value for rating
-            ratingTextView.setText(currentPlace.getRating() + "");
+            ratingTextView.setText(String.format("%s", currentPlace.getRating()));
 
             // set value for rating bar
             ratingBar.setRating(currentPlace.getRating());
 
             // set value for time
-            long millis = currentPlace.getTimeInMillis();
-            timeTextView.setText(String.format("%02d:%02d", TimeUnit.MILLISECONDS.toHours(millis)
-                    , TimeUnit.MILLISECONDS.toMinutes(millis) % TimeUnit.HOURS.toMinutes(1)));
+            timeTextView.setText(String.format("Opens at %s", currentPlace.getTime()));
         } else {
-            // remove rating, rating bar and time from list item layout for OfficesFragment and
+            // remove rating, rating bar and time from list item layout for PlacesFragment and
             // CollegesFragment
             ratingTextView.setVisibility(View.GONE);
             ratingBar.setVisibility(View.GONE);
