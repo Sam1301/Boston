@@ -30,12 +30,19 @@ public class CollegesFragment extends Fragment {
         ArrayList<Place> places = new ArrayList<>();
 
         // initialize array list
-        places.add(new Place(R.drawable.image, "Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place(R.drawable.image, "Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place(R.drawable.image, "Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place(R.drawable.image, "Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place(R.drawable.image, "Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
-        places.add(new Place(R.drawable.image, "Harvard", "Cambridge, MA 02138", "+1 617-495-1000"));
+        places.add(new Place(R.drawable.harvard_b_school, "Harvard Business School",
+                "Boston, MA 02163", "+1 617-495-6000"));
+        places.add(new Place(R.drawable.berkley_col_music, "Berkley College of Music",
+                "Boston, MA 02215", "+1 617-266-1400"));
+        places.add(new Place(R.drawable.boston_college, "Boston College", "Newton, MA 02467",
+                "+1 617-552-8000"));
+        places.add(new Place(R.drawable.harvard_med_school, "Harvard Medical School",
+                "25 Shattuck St, Boston, MA 02115", "+1 617-432-1000"));
+        places.add(new Place(R.drawable.tufts_univ, "Tuft University",
+                "419 Boston Ave, Medford, MA 02155", "+1 617-628-5000"));
+        places.add(new Place(R.drawable.harvard_school_ph, "Harvard School of Public Health",
+                "677 Huntington Ave, Boston, MA 02115", "+1 617-495-1000"));
+
 
         // array adapter to aid displaying places in ListView
         PlaceAdapter adapter = new PlaceAdapter(getActivity(), places);
