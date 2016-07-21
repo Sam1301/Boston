@@ -79,13 +79,15 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
 
         if (currentPlace.hasRatingAndTime()) {
             // set value for rating
-            ratingTextView.setText(String.format("%s", currentPlace.getRating()));
+            ratingTextView.setText(String.format(
+                    getContext().getString(R.string.list_item_rating_format_string),
+                    currentPlace.getRating()));
 
             // set value for rating bar
             ratingBar.setRating(currentPlace.getRating());
 
             // set value for time
-            timeTextView.setText(String.format("Opens at %s", currentPlace.getTime()));
+            timeTextView.setText(String.format(getContext().getString(R.string.list_item_time_format_string), currentPlace.getTime()));
         } else {
             // remove rating, rating bar and time from list item layout for PlacesFragment and
             // CollegesFragment
